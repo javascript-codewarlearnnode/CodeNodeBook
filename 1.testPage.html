@@ -101,12 +101,33 @@
     <script>
         //完整版編寫區       
         var z1 = 6;
+        var s="CodEWaRs";
         function testFunction(x) {
-            return x *2
+            s1=s;
+            n=s.length;
+            index=[];
+            for(i=0;i<n;i++){
+                if(s1.match(/^[A-Z]/)){
+                index.push(s1.search(/[A-Z]/)+i);
+                }
+                s1 = s1.substring(1);
+            }
+            return index;
+        }
+        
+        function testFunction2(x) {
+            ar=s.split("");
+            index=[];
+            for(i=0;i<ar.length;i++){
+                if(/[A-Z]/.test(ar[i])){
+                index.push(i);
+                }
+            }
+            return index;
         }
         //完整版輸出區
-        $('.area1').text(testFunction(z1));
-        $('.area2').text('');
+        $('.area1').text(testFunction(s));
+        $('.area2').text(testFunction2(s));
         $('.area3').text('');
         $('.area4').text('');
 
