@@ -67,8 +67,13 @@
         font-weight: 300;
     }
 
+<<<<<<< HEAD
+    #show {
+        font-size:1rem;
+=======
     p {
         font-size: 40px;
+>>>>>>> master
     }
 </style>
 
@@ -99,6 +104,24 @@
     </div>
 
     <script>
+        var show = document.querySelector('#show');
+        var a ="!!!Hi !!hi!!! !hi";
+        function testFunction(input,n) {
+            
+            ar = a.split('');
+            console.log(ar.filter((word)=>word == "!").length);
+            max=ar.filter((word)=>word == "!").length;
+            if(n>max)n=max;
+            for(i=0;i<n;i++){
+                ar.splice(ar.indexOf("!"),1);
+            }
+            console.log(ar);
+            console.log(ar.join(""));
+
+
+            // show.innerHTML = x
+        }
+        testFunction(a,5)
         //完整版編寫區       
         var z1 = 6;
         function testFunction(x) {
