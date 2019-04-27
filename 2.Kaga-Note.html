@@ -5,41 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Kaga Note</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Raleway" rel="stylesheet">
 </head>
+<style>
+    * {
+        font-family: 'Noto Serif TC', serif, Raleway, sans-serif;
+
+    }
+
+    body {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #div {
+        box-shadow: 0 0 7px #ddd;
+        border-radius: 50%;
+        width: 500px;
+        height: 500px;
+        background: rgb(99, 151, 168);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        font-weight: 100;
+        color: #fff;
+    }
+</style>
 
 <body>
     <div id="div"></div>
     <script>
         var div = document.querySelector('#div');
-// Array
-//-----------------------------------------------------------
-    //假資料區
-        const array1 = [5,6,7,1,5,11,35,348,321,12,0]
-        const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
+        // Array
+        //-----------------------------------------------------------
+        //假資料區
+        const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
+        const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
+        const array3 = [-45, 64, 781, 0, -32, 4, 66, 784, -153]
 
-    //內容區  紀錄格式如下
+        //內容區  紀錄格式如下
         //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
-        //const arrayReduce = x => x.reduce((a, b) => a + b);
+        const arrayReduce = x => x.reduce((a, b) => a + b);
 
 
 
-// String
-//-----------------------------------------------------------
-    //假資料區
+
+        // String
+        //-----------------------------------------------------------
+        //假資料區
         const str1 = 'Apple macbook Microsoft Windows'
         const str2 = 'a|b|c|d|e'
         const str3 = '12:43:34:51'
         const str4 = '2019-12-3 12:43'
 
-
-    //內容區
+        //內容區
         //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
         //const arrayReduce = x => x.reduce((a, b) => a + b);
 
 
         // 直接吃這裡就可以看結果
-        div.innerHTML = stringEval(array2);
+        div.innerHTML = arrayReduce(array1, array2, array3);
     </script>
 </body>
 

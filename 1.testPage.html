@@ -2,45 +2,109 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Test Page</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Raleway" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<style>
-    button {
-        padding: 30px;
-    }
-
-    #show {
-        font-size:1rem;
-    }
-</style>
-
-<body>
-    <div class="container">
-
-        <button type="button" class="btn btn-primary p-5 " onclick="testFunction()">Keeping Going~</button>
-        <p id='show'></p>
-    </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        font-family: 'Noto Serif TC', serif, Raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #54494B;
+    }
+
+    .bg {
+        height: 20vh;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .bg1 {
+        background: #F26101;
+        color: white;
+    }
+
+    .bg2 {
+        background: #FFFFFF;
+        color: #304269
+    }
+
+    .bg3 {
+        background: #D9E8F5;
+        color: #304269
+    }
+
+    .bg4 {
+        background: #91BED4;
+        color: #304269
+    }
+
+    .bg5 {
+        background: #304269;
+        color: white;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+<<<<<<< HEAD
+    #show {
+        font-size:1rem;
+=======
+    p {
+        font-size: 40px;
+>>>>>>> master
+    }
+</style>
+
+<body>
+    <div class="">
+        <div class="bg bg1 col pt-3">
+            <h5>ONE區</h5>
+            <p class='area1 mt-4'></p>
+        </div>
+        <div class="bg bg2 col pt-3">
+            <h5>TWO區</h5>
+            <p class='area2 mt-4'></p>
+        </div>
+        <div class="bg bg3 col pt-3">
+            <h5>THREE區</h5>
+            <p class='area3 mt-4'></p>
+        </div>
+        <div class="bg bg4 col pt-3">
+            <h5>FOUR區</h5>
+            <p class='area4 mt-4'></p>
+        </div>
+
+
+        <div class="bg bg5 col pt-3">
+            <h5>縮寫測試區</h5>
+            <p class="short mt-4"></p>
+        </div>
+    </div>
+
     <script>
+<<<<<<< HEAD
         var show = document.querySelector('#show');
         var a ="!!!Hi !!hi!!! !hi";
         function testFunction(input,n) {
@@ -59,7 +123,32 @@
             // show.innerHTML = x
         }
         testFunction(a,5)
+=======
+        //完整版編寫區       
+        var z1 = 6;
+        function testFunction(x) {
+            return x *2
+        }
+        //完整版輸出區
+        $('.area1').text(testFunction(z1));
+        $('.area2').text('');
+        $('.area3').text('');
+        $('.area4').text('');
+
+
+
+        //縮寫版編寫區
+        var z2 = '';
+        // var Abridge = x => 
+
+        //縮寫版輸出區
+        $('.short').text('123');
+>>>>>>> master
     </script>
+
+
+
+
 </body>
 
 </html>

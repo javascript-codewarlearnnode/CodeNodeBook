@@ -1,54 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Note</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Poppins" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
+<style>
+     * {
+        font-family: 'Noto Serif TC', serif , 'Poppins', sans-serif;
+    }
+    #div{
+        font-size: 32px;
+        font-weight: 500;
+        background: rgba(0, 11, 14, 0.774);
+        color: white;
+        height: 80vh;
+        box-shadow: 0 0 7px #ccc;
+    }
+</style>
 <body>
-    <div id="div"></div>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body text-center" id="div">
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
     <script>
         var div = document.querySelector('#div');
 // Array
 //-----------------------------------------------------------
-        const array1 = [5,6,7,1,5,11,35,348,321,12,0]
-        const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
+    //假資料區
+        const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
+        const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
+        const array3 = [-45,64,781,0,-32,4,66,784,-153]
 
-    // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+    //內容區
+        // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
         const arrayReduce = x => x.reduce((a, b) => a * b);
 
 
-    // array.join() 可以把array所有內容合在一起變字串
+        // array.join() 可以把array所有內容合在一起變字串
         // 若是()裡面有放運算子 , 那運算子就會放在每個字串中間
         const arrayJoin1 = x => x.join('*')
         const arrayJoin2 = x => x.join('')
 
 
-    // array.sort() 是對陣列內容作排列用的
+        // array.sort() 是對陣列內容作排列用的
         // 如果()內沒有寫東西  預設是以字串編碼做排序
+        // sort不管是否先用變數裝著 , 都會直接改到array本體 (因為js的array是參照) 
+        // 若會用到原始狀態 , 記得先複製 請參考concat
         const arraySort1 = x => x.sort()
-        const arraySort2 = x => x.sort((a,b) => a.length-b.length) //這樣寫會排序字串的長度(短到長)
+        const arraySort2 = x => x.sort((a, b) => a.length - b.length) //這樣寫會排序字串的長度(短到長)
 
-    // array.reverse() 翻轉陣列前後順序
+
+        // array.reverse() 翻轉陣列前後順序
+        // 就是原本排序為[0][1][2][3][4]變成[4][3][2][1][0]這樣排
         const arrayReverse = x => x.reverse()
+
+
+        // array.concat() 1.複製array / 2.合併陣列
+        // 如果想要用sort或任何會變動array本身的方法
+        // 可先concat已備不時之需
+        const arrayConcat1 = x => x.concat(); //複製
+        const arrayConcat2 = (x,y,z) => x.concat(y,z); //3陣列合併
+
 
 
 // String
 //-----------------------------------------------------------
+    //假資料區
         const str1 = 'Apple macbook Microsoft Windows'
         const str2 = 'a|b|c|d|e'
         const str3 = '12:43:34:51'
         const str4 = '2019-12-3 12:43'
 
-    // eval(string) 可以對字串做運算(如果裡面有+-*/)  
+    //內容區
+        // eval(string) 可以對字串做運算(如果裡面有+-*/)  
         // 就算沒有也可在括號內加進去 (字串內容必須是數字)
         const stringEval = x => eval('1+7-4*6/5')
 
 
-    //string.split() 字串轉array 可做切割,或拿掉特定字元
+        // string.split() 字串轉array 可做切割,或拿掉特定字元
         //()直接變陣列 套str1 - ['Apple macbook Microsoft Windows']
         const stringSplit1 = x => x.split()
         //('')每個字拆開變陣列 套str1 - ["A", "p", "p", "l", "e", " ", ... ]
