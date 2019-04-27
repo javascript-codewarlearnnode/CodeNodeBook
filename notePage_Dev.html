@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CodeNoteBook</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Noto+Sans+TC" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Courgette', cursive;
+            font-family: 'Noto Sans TC', sans-serif;
+            background: url('images/fog-3622519_1920.jpg') no-repeat fixed;
+            background-size: cover;
+        }
+
+        .stick {
+            top: 0;
+        }
+
+        aside {
+            min-height: 100vh;
+        }
+
+        aside ul li {
+            margin: 4px 12px;
+        }
+
+
+        section {
+            right: 0;
+        }
+
+        header {
+            height: 100px;
+            background: url('images/wood-fibre-boards-2857073_1920.jpg') no-repeat bottom;
+            background-size: cover;
+        }
+
+        header p {
+            font-size: 4rem;
+            text-align: center;
+            color: rgb(34, 15, 2);
+            text-shadow: rgb(248, 235, 224) 3px 3px 3px;
+            font-family: 'Courgette', cursive;
+        }
+
+        .card-header {
+            text-align: center;
+            background: rgb(206, 222, 247);
+        }
+
+        .card-title {
+            font: bolder;
+            color: rgb(248, 48, 48);
+        }
+
+        .card-body ul li {
+            width: 50%;
+        }
+
+
+        .title {
+            text-align: center;
+            padding: 16px;
+            background: rgb(231, 247, 250);
+        }
+
+        .title h4 {
+            margin: 0;
+        }
+
+        .getHeigh {
+            height: 100px;
+        }
+
+        #showboard {
+            height: 100px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        #showboard p {
+            font-size: 1.5rem;
+        }
+
+        #goTop {
+            right: 0;
+            bottom: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Code NoteBook</p>
+    </header>
+    <aside class="col-lg-2 p-0 position-absolute">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            陣列-Array
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#arCD">>新增/移除</a></li>
+                            <li><a href="#arMath">>運算</a></li>
+                            <li><a href="#arSort">>排序</a></li>
+                            <li><a href="#arAssembly">>合併/切割</a></li>
+                            <li><a href="#arFilter">>篩選</a></li>
+                            <li><a href="#arMix">>綜合</a></li>
+                            <li><a href="#arOther">>其他</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            字串-String
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#strCD">>新增/移除</a></li>
+                            <li><a href="#strMath">>運算</a></li>
+                            <li><a href="#strSort">>排序</a></li>
+                            <li><a href="#strAssembly">>合併/切割</a></li>
+                            <li><a href="#strFilter">>篩選</a></li>
+                            <li><a href="#strMix">>綜合</a></li>
+                            <li><a href="#strOther">>其他</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </aside>
+    <section class="col-lg-10 p-0 position-absolute">
+        <article>
+            <div class="title">
+                <h4>陣列-Array</h>
+            </div>
+            <div class="contnent row m-0 flex-wrap">
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="">
+                        <h5 class="card-title">分類標題</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">說明</h6>
+                        <p class="card-text">內容概述--我是格式範例</p>
+                        <a href="#" target="_blank" class="card-link">連結Link-1</a>
+                        <a href="#" target="_blank" class="card-link">連結Link-2</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arCD">
+                        <h5 class="card-title">新增/移除</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arMath">
+                        <h5 class="card-title">運算</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arSort">
+                        <h5 class="card-title">排序</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arAssembly">
+                        <h5 class="card-title">合併/切割</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arFilter">
+                        <h5 class="card-title">篩選</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arMix">
+                        <h5 class="card-title">綜合</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">JavaScript 陣列處理方法</h6>
+                        <p class="card-text">[filter(), find(), forEach(), map(), every(), some(), reduce()]</p>
+                        <a href="https://wcc723.github.io/javascript/2017/06/29/es6-native-array/" target="_blank"
+                            class="card-link">參考資料-1</a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="arOther">
+                        <h5 class="card-title">其他</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h4>字串-String</h4>
+            </div>
+            <div class="contnent row m-0 flex-wrap">
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strCD">
+                        <h5 class="card-title">新增/移除</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strMath">
+                        <h5 class="card-title">運算</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strSort">
+                        <h5 class="card-title">排序</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strAssembly">
+                        <h5 class="card-title">合併/切割</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strFilter">
+                        <h5 class="card-title">篩選</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strOther">
+                        <h5 class="card-title">綜合</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Javascript字串常用方法詳解</h6>
+                        <p class="card-text m-0">包含13種方法</p>
+                        <ul class="d-flex p-0 flex-wrap">
+                            <li>charAt()</li>
+                            <li>indexOf()</li>
+                            <li>lastIndexOf()</li>
+                            <li>substring()</li>
+                            <li>slice()</li>
+                            <li>substr()</li>
+                            <li>replace()</li>
+                            <li>search()</li>
+                            <li>match()</li>
+                            <li>split()</li>
+                            <li>trim()</li>
+                            <li>toLowerCase()</li>
+                            <li>toUpperCase()</li>
+                        </ul>
+                        <a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/262893/" target="_blank"
+                            class="card-link">參考資料-1</a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 m-4">
+                    <div class="card-body" id="strOther">
+                        <h5 class="card-title">其他</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
+                        <p class="card-text">空白</p>
+                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="#" target="_blank" class="card-link"></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="getHeigh"></div>
+    </section>
+    <button type="button" id="goTop" class="btn btn-warning position-fixed">TOP</button>
+    <div class="m-0 p-2 fixed-bottom" id="showboard">
+        測試function輸出結果：
+        <p class="text-center" id="show_result">1234</p>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        //sidenav: sticky-top
+        $(window).scroll(function () {
+            var scroll = $(this).scrollTop();
+            if (scroll > 100) {
+                $("aside").addClass("stick position-fixed");
+                $("aside").removeClass("position-absolute");
+            } else {
+                $("aside").removeClass("stick position-fixed");
+                $("aside").addClass("position-absolute");
+            }
+        })
+        //回到頁面頂端
+        $("#goTop").click(function () {
+            // $(window).scrollTop(0);
+            //animate無法加在window上，故此處需加在html上
+            $("html").animate({
+                scrollTop: 0//scrollTop雖然不是CSS屬性，但仍可使用
+            }, 400)
+        });
+    </script>
+</body>
+
+</html>

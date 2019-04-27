@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Test Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Raleway" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        font-family: 'Noto Serif TC', serif, Raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #54494B;
+    }
+
+    .bg {
+        height: 20vh;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .bg1 {
+        background: #F26101;
+        color: white;
+    }
+
+    .bg2 {
+        background: #FFFFFF;
+        color: #304269
+    }
+
+    .bg3 {
+        background: #D9E8F5;
+        color: #304269
+    }
+
+    .bg4 {
+        background: #91BED4;
+        color: #304269
+    }
+
+    .bg5 {
+        background: #304269;
+        color: white;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 40px;
+    }
+</style>
+
+<body>
+    <div class="">
+        <div class="bg bg1 col pt-3">
+            <h5>ONE區</h5>
+            <p class='area1 mt-4'></p>
+        </div>
+        <div class="bg bg2 col pt-3">
+            <h5>TWO區</h5>
+            <p class='area2 mt-4'></p>
+        </div>
+        <div class="bg bg3 col pt-3">
+            <h5>THREE區</h5>
+            <p class='area3 mt-4'></p>
+        </div>
+        <div class="bg bg4 col pt-3">
+            <h5>FOUR區</h5>
+            <p class='area4 mt-4'></p>
+        </div>
+
+
+        <div class="bg bg5 col pt-3">
+            <h5>縮寫測試區</h5>
+            <p class="short mt-4"></p>
+        </div>
+    </div>
+
+    <script>
+        //完整版編寫區       
+        var z1 = 6;
+        var s="CodEWaRs";
+        function testFunction(x) {
+            s1=s;
+            n=s.length;
+            index=[];
+            for(i=0;i<n;i++){
+                if(s1.match(/^[A-Z]/)){
+                index.push(s1.search(/[A-Z]/)+i);
+                }
+                s1 = s1.substring(1);
+            }
+            return index;
+        }
+        
+        function testFunction2(x) {
+            ar=s.split("");
+            index=[];
+            for(i=0;i<ar.length;i++){
+                if(/[A-Z]/.test(ar[i])){
+                index.push(i);
+                }
+            }
+            return index;
+        }
+        //完整版輸出區
+        $('.area1').text(testFunction(s));
+        $('.area2').text(testFunction2(s));
+        $('.area3').text('');
+        $('.area4').text('');
+
+
+
+        //縮寫版編寫區
+        var z2 = '';
+        // var Abridge = x => 
+
+        //縮寫版輸出區
+        $('.short').text('123');
+    </script>
+
+
+
+
+</body>
+
+</html>
