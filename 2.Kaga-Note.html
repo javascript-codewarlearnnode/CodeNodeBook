@@ -47,9 +47,15 @@
         const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
         const array3 = [-45, 64, 781, 0, -32, 4, 66, 784, -153]
 
-        //內容區  紀錄格式如下
-        //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
-        const arrayReduce = x => x.reduce((a, b) => a + b);
+        //內容區
+        // ** 紀錄格式如下 **
+        // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+        // const arrayReduce = x => x.reduce((a, b) => a + b);
+        // ** 紀錄格式範例結束 **
+
+        // array.push() 新增資料到陣列裡面
+        // 下列範例x為要加資料的array , y為要加進去的data
+        const arrayPush = (x,y) => x.push(y);
 
 
 
@@ -62,10 +68,16 @@
         const str3 = '12:43:34:51'
         const str4 = '2019-12-3 12:43'
 
-        //內容區
-        //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
-        //const arrayReduce = x => x.reduce((a, b) => a + b);
+        //內容區 
+        // ** 紀錄格式如下 **
+        // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+        // const arrayReduce = x => x.reduce((a, b) => a + b);
+        // ** 紀錄格式範例結束 **
 
+        // string.match() 判斷該字串是否符合條件 , 是回傳true , 否回傳false
+        // 括號內為正規表達式
+        // 下列範例是驗證x是否為大寫
+        const stringMatch = x => x.match(/^.*[A-Z]+.*$/)
 
         // 直接吃這裡就可以看結果
         div.innerHTML = arrayReduce(array1, array2, array3);
