@@ -44,6 +44,7 @@
     //假資料區
         const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
         const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
+        const array3 = [-45,64,781,0,-32,4,66,784,-153]
 
     //內容區
         // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
@@ -58,11 +59,22 @@
 
         // array.sort() 是對陣列內容作排列用的
         // 如果()內沒有寫東西  預設是以字串編碼做排序
+        // sort不管是否先用變數裝著 , 都會直接改到array本體 (因為js的array是參照) 
+        // 若會用到原始狀態 , 記得先複製 請參考concat
         const arraySort1 = x => x.sort()
         const arraySort2 = x => x.sort((a, b) => a.length - b.length) //這樣寫會排序字串的長度(短到長)
 
+
         // array.reverse() 翻轉陣列前後順序
+        // 就是原本排序為[0][1][2][3][4]變成[4][3][2][1][0]這樣排
         const arrayReverse = x => x.reverse()
+
+
+        // array.concat() 1.複製array / 2.合併陣列
+        // 如果想要用sort或任何會變動array本身的方法
+        // 可先concat已備不時之需
+        const arrayConcat1 = x => x.concat(); //複製
+        const arrayConcat2 = (x,y,z) => x.concat(y,z); //3陣列合併
 
 
 
