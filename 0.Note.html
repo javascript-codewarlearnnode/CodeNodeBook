@@ -60,7 +60,7 @@
 
         // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可
         // 個別運算後回傳新的陣列
-        const arrayMap = x => x.map(a=> a * 2);
+        const arrayMap = x => x.map(a=> a * 2);//套array1 - [10,12,14,2,...]
 
 
 
@@ -95,7 +95,7 @@
         ar2= ['T','E','S','T'];
         ar2.filter(function(word){return word==="T"});//["T","T"]
         ar2.filter((word)=>word=="T");//簡單寫法
-        const arrayFilter = x => x.filter((item)=>item=="T");
+        const arrayFilter = x => x.filter((item)=>item==5);//套array1 - [5,5]
 
 
 
@@ -125,7 +125,7 @@
 
 
         // 直接吃這裡就可以看結果
-        div.innerHTML = stringEval(array2);
+        div.innerHTML = arrayFilter(array1);
     </script>
 </body>
 
