@@ -48,29 +48,30 @@
 // Array
 //-----------------------------------------------------------
     //假資料區
-        const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
+        const array1 = [26, 6, 7, 1, 5, 11]
         const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
-        const array3 = [-45,64,781,0,-32,4,66,784,-153]
+        const array3 = [-5,14,21,1,-22,4,6,24,-13]
 
     //內容區
-        // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可
-        // 回傳單一值
+        // array.reduce() 想對陣列內容作兩個兩個做"運算"，在後面套運算func即可
+        // 由左至右計算 回傳單一值
+        // 例如下列例子套array3 會從左邊的值一路乘到最右邊的值 = -242161920
         const arrayReduce = x => x.reduce((a, b) => a * b);
 
 
-        // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可
+        // array.map() 想對陣列全部的內容統一作"運算" 在後面套運算func即可
         // 個別運算後回傳新的陣列
-        const arrayMap = x => x.map(a=> a * 2);//套array1 - [10,12,14,2,...]
+        // 例如下列例子套array 會全部*2 : [10,12,14,2,...]
+        const arrayMap = x => x.map(a=> a * 2);
 
 
-
-        // array.join() 可以把array所有內容合在一起變字串
+        // array.join() 想把array所有內容融合在一起 , 或者array轉字串皆可用
         // 若是()裡面有放運算子 , 那運算子就會放在每個字串中間
         const arrayJoin1 = x => x.join('*')
         const arrayJoin2 = x => x.join('')
 
 
-        // array.sort() 是對陣列內容作排列用的
+        // array.sort() 想對陣列內容作排列用這個
         // 如果()內沒有寫東西  預設是以字串編碼做排序
         // sort不管是否先用變數裝著 , 都會直接改到array本體 (因為js的array是參照) 
         // 若會用到原始狀態 , 記得先複製 請參考concat
@@ -85,7 +86,7 @@
 
         // array.concat() 1.複製array / 2.合併陣列
         // 如果想要用sort或任何會變動array本身的方法
-        // 可先concat已備不時之需
+        // 可先concat一份已備不時之需 
         const arrayConcat1 = x => x.concat(); //複製
         const arrayConcat2 = (x,y,z) => x.concat(y,z); //3陣列合併
 
@@ -126,7 +127,7 @@
 
 
         // 直接吃這裡就可以看結果
-        div.innerHTML = arrayFilter(array1);
+        div.innerHTML = arrayReduce(array3);
     </script>
 </body>
 
