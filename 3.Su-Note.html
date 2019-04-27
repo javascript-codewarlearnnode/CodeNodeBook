@@ -14,49 +14,28 @@
         var div = document.querySelector('#div');
 // Array
 //-----------------------------------------------------------
+    //假資料區
         const array1 = [5,6,7,1,5,11,35,348,321,12,0]
         const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
 
-    // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
-        const arrayReduce = x => x.reduce((a, b) => a * b);
+    //內容區  紀錄格式如下
+        //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+        //const arrayReduce = x => x.reduce((a, b) => a + b);
 
-
-    // array.join() 可以把array所有內容合在一起變字串
-        // 若是()裡面有放運算子 , 那運算子就會放在每個字串中間
-        const arrayJoin1 = x => x.join('*')
-        const arrayJoin2 = x => x.join('')
-
-
-    // array.sort() 是對陣列內容作排列用的
-        // 如果()內沒有寫東西  預設是以字串編碼做排序
-        const arraySort1 = x => x.sort()
-        const arraySort2 = x => x.sort((a,b) => a.length-b.length) //這樣寫會排序字串的長度(短到長)
-
-    // array.reverse() 翻轉陣列前後順序
-        const arrayReverse = x => x.reverse()
 
 
 // String
 //-----------------------------------------------------------
+    //假資料區
         const str1 = 'Apple macbook Microsoft Windows'
         const str2 = 'a|b|c|d|e'
         const str3 = '12:43:34:51'
         const str4 = '2019-12-3 12:43'
 
-    // eval(string) 可以對字串做運算(如果裡面有+-*/)  
-        // 就算沒有也可在括號內加進去 (字串內容必須是數字)
-        const stringEval = x => eval('1+7-4*6/5')
 
-
-    //string.split() 字串轉array 可做切割,或拿掉特定字元
-        //()直接變陣列 套str1 - ['Apple macbook Microsoft Windows']
-        const stringSplit1 = x => x.split()
-        //('')每個字拆開變陣列 套str1 - ["A", "p", "p", "l", "e", " ", ... ]
-        const stringSplit2 = x => x.split('')
-        //(' ')每個單字拆開變陣列 套str1 - ["Apple", "macbook", "Microsoft", "Windows"]
-        const stringSplit3 = x => x.split(' ')
-        //(':')每個單字拆開變陣列並拿掉:號 套str3 - ["12", "43", "34", "51"]
-        const stringSplit4 = x => x.split(':')
+    //內容區
+        //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+        //const arrayReduce = x => x.reduce((a, b) => a + b);
 
 
         // 直接吃這裡就可以看結果
