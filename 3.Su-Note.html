@@ -15,12 +15,27 @@
 // Array
 //-----------------------------------------------------------
     //假資料區
-        const array1 = [5,6,7,1,5,11,35,348,321,12,0]
-        const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
+    const array1 = [5,6,7,1,5,11,35,348,321,12,0]
+    const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
 
-    //內容區  紀錄格式如下
-        //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
-        //const arrayReduce = x => x.reduce((a, b) => a + b);
+
+    // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳單一值)
+        const arrayReduce = x => x.reduce((a, b) => a * b);
+
+    // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳新的陣列)
+        const arrayMap = x => x.map(a=> a * 2);
+
+
+    // array.join() 將陣列內容以()內的字串串接，輸出成為字串
+        ar=["Join","Words","Together"];
+        ar.join("");//'Peter','Ethan','Jason','Tom','Amanda'
+        ar.join("-")//'Peter','Ethan','Jason','Tom','Amanda'
+
+    // array.filter(function(){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
+        ar2= ['T','E','S','T'];
+        ar2.filter(function(word){return word==="T"});//["T","T"]
+        ar2.filter((word)=>word=="T");//簡單寫法
+
 
 
 
