@@ -24,8 +24,12 @@
 <body>
     <div class="container">
 
-        <button type="button" class="btn btn-primary p-5 " onclick="testFunction()">Keeping Going~</button>
-        <p id='show'></p>
+        <h5>Test Function Result</h5>
+        <p id='showtestFunc'></p>
+        <br>
+        <br>
+        <h5>Abridge Result</h5>
+        <p id='Abridge'></p>
     </div>
 
 
@@ -41,13 +45,23 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        var show = document.querySelector('#show');
-        var a = [2, 7, -5];
-        var dd = a;
-        function testFunction(inputArray) {
-
+        var showtestFunc = document.querySelector('#showtestFunc');
+        var Abridge = document.querySelector('#Abridge');
+        var a = 21445;
+        //這邊可寫完整版function釐清邏輯        
+        function testFunction(n) {
+            var b = n.toString();
+            var c = b.split('');
+            var d = c.sort((a, b) => b - a)
+            console.log(d)
+            return c
         }
-        testFunction(a)
+        showtestFunc.innerHTML = testFunction(a);
+
+        //寫成功之後可來這裡把整個function變縮寫(練習精簡)
+        var Abridge = x => String(x).split().sort((a,b) => b - a);
+        console.log(Abridge())
+        Abridge.innerHTML = Abridge(a);
     </script>
 </body>
 
