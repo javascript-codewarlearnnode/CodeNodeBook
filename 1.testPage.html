@@ -17,7 +17,7 @@
     }
 
     #show {
-        font-size:
+        font-size:1rem;
     }
 </style>
 
@@ -42,14 +42,23 @@
         crossorigin="anonymous"></script>
     <script>
         var show = document.querySelector('#show');
-        var a = [2, 7, -5];
-        function testFunction(inputArray) {
-            var a = inputArray.sort((a, b) => a - b);
-            var b = a[1]
-            var c = (inputArray.indexOf())-1;
-            show.innerHTML = c
+        var a ="!!!Hi !!hi!!! !hi";
+        function testFunction(input,n) {
+            
+            ar = a.split('');
+            console.log(ar.filter((word)=>word == "!").length);
+            max=ar.filter((word)=>word == "!").length;
+            if(n>max)n=max;
+            for(i=0;i<n;i++){
+                ar.splice(ar.indexOf("!"),1);
+            }
+            console.log(ar);
+            console.log(ar.join(""));
+
+
+            // show.innerHTML = x
         }
-        testFunction(a)
+        testFunction(a,5)
     </script>
 </body>
 

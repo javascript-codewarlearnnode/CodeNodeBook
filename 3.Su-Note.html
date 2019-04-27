@@ -27,6 +27,17 @@
         const arrayMap = x => x.map(a=> a * 2);
 
 
+    // array.join() 將陣列內容以()內的字串串接，輸出成為字串
+        ar=["Join","Words","Together"];
+        ar.join("");//'Peter','Ethan','Jason','Tom','Amanda'
+        ar.join("-")//'Peter','Ethan','Jason','Tom','Amanda'
+
+    // array.filter(function(){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
+        ar2= ['T','E','S','T'];
+        ar2.filter(function(word){return word==="T"});//["T","T"]
+        ar2.filter((word)=>word=="T");//簡單寫法
+
+
 
 
 
