@@ -53,8 +53,15 @@
         const array3 = [-45,64,781,0,-32,4,66,784,-153]
 
     //內容區
-        // array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
+        // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可
+        // 回傳單一值
         const arrayReduce = x => x.reduce((a, b) => a * b);
+
+
+        // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可
+        // 個別運算後回傳新的陣列
+        const arrayMap = x => x.map(a=> a * 2);
+
 
 
         // array.join() 可以把array所有內容合在一起變字串
@@ -81,6 +88,14 @@
         // 可先concat已備不時之需
         const arrayConcat1 = x => x.concat(); //複製
         const arrayConcat2 = (x,y,z) => x.concat(y,z); //3陣列合併
+
+
+        // array.filter(function(item){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
+        // function內的參數為陣列的元素
+        ar2= ['T','E','S','T'];
+        ar2.filter(function(word){return word==="T"});//["T","T"]
+        ar2.filter((word)=>word=="T");//簡單寫法
+        const arrayFilter = x => x.filter((item)=>item=="T");
 
 
 
