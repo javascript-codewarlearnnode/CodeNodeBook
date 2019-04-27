@@ -130,6 +130,33 @@
         $('.area2').text(testFunction2(s));
         $('.area3').text('');
         $('.area4').text('');
+        // sequenceSum(2, 2, 2) === 2
+        // sequenceSum(2, 6, 2) === 12 // 2 + 4 + 6
+        // sequenceSum(1, 5, 1) === 15 // 1 + 2 + 3 + 4 + 5
+        // sequenceSum(1, 5, 3) === 5 // 1 + 4
+        var a = 'CodEWaRs';
+
+        // 解題function
+        function testFunction(x) {
+            //創一個空陣列
+            var c = [];
+            //跑迴圈
+            for (i = 0; i < x.length; i++) {
+                //判斷x[i是不是大寫]
+                var b = x[i].match(/^.*[A-Z]+.*$/)
+                //是的話直接push i去陣列
+                if(b){
+                    c.push(i);
+                }
+            }
+            // 最後把陣列打出來
+            return c;
+        }
+        //完整版輸出區
+        $('.area1').text(testFunction(a));
+        // $('.area2').text(testFunction());
+        // $('.area3').text(testFunction());
+        // $('.area4').text(testFunction());
 
 
 

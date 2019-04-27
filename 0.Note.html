@@ -48,54 +48,84 @@
 // Array
 //-----------------------------------------------------------
     //假資料區
-        const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
+        const array1 = [26, 6, 7, 1, 5, 11]
         const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
-        const array3 = [-45,64,781,0,-32,4,66,784,-153]
+        const array3 = [-5,14,21,1,-22,4,6,24,-13]
 
     //內容區
-        // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可
-        // 回傳單一值
-        const arrayReduce = x => x.reduce((a, b) => a * b);
+    //1.Array新增移除
+        // array.push() 新增資料到陣列末端
+        // x為要加資料的array , y為要加到array後端的data
+        const arrayPush = (x,y) => x.push(y)
+
+        // array.unshift() 新增資料到陣列前端
+        // x為要加資料的array , y為要加到array前端的data
+        const arrayUnshift = (x,y) => x.unshift(y)
+        
+        // array.pop() 移除陣列末端的資料
+        // x為要移除最末端資料的array
+        const arrayPop = (x) => x.pop()
+
+        // array.shift() 移除陣列前端的資料
+        // x為要移除最前端資料的array
+        const arrayShift = (x) => x.shift()
 
 
-        // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可
+    //2.Array運算
+        // array.reduce() 想對陣列內容作兩個兩個做"運算"，在後面套運算func即可
+        // 由左至右計算 回傳單一值
+        // 例如下列例子套array3 會從左邊的值一路乘到最右邊的值 = -242161920
+        // x為要對內容之間做相互運算array
+        const arrayReduce = x => x.reduce((a, b) => a * b)
+
+        // array.map() 想對陣列全部的內容統一作"運算" 在後面套運算func即可
         // 個別運算後回傳新的陣列
-        const arrayMap = x => x.map(a=> a * 2);//套array1 - [10,12,14,2,...]
+        // 例如下列例子套array 會全部*2 : [10,12,14,2,...]
+        // x為要統一對內容作運算的array
+        const arrayMap = x => x.map(a=> a * 2)
 
 
-
-        // array.join() 可以把array所有內容合在一起變字串
-        // 若是()裡面有放運算子 , 那運算子就會放在每個字串中間
-        const arrayJoin1 = x => x.join('*')
-        const arrayJoin2 = x => x.join('')
-
-
-        // array.sort() 是對陣列內容作排列用的
+    //3.Array排序
+        // array.sort() 想對陣列內容作排列用這個
         // 如果()內沒有寫東西  預設是以字串編碼做排序
         // sort不管是否先用變數裝著 , 都會直接改到array本體 (因為js的array是參照) 
         // 若會用到原始狀態 , 記得先複製 請參考concat
+        // x為要排序的array
         const arraySort1 = x => x.sort()
         const arraySort2 = x => x.sort((a, b) => a.length - b.length) //這樣寫會排序字串的長度(短到長)
 
-
         // array.reverse() 翻轉陣列前後順序
         // 就是原本排序為[0][1][2][3][4]變成[4][3][2][1][0]這樣排
+        // x為要排序的array
         const arrayReverse = x => x.reverse()
 
 
+    //4.Array合併切割
+        // array.join() 想把array所有內容合併在一起 , 或者array轉字串皆可用
+        // 若是()裡面有放運算子 , 那運算子就會放在每個字串中間
+        // x為要合併或轉字串的array
+        const arrayJoin1 = x => x.join('*')
+        const arrayJoin2 = x => x.join('')
+
         // array.concat() 1.複製array / 2.合併陣列
         // 如果想要用sort或任何會變動array本身的方法
-        // 可先concat已備不時之需
-        const arrayConcat1 = x => x.concat(); //複製
-        const arrayConcat2 = (x,y,z) => x.concat(y,z); //3陣列合併
+        // 可先concat一份已備不時之需
+        // 1. x為要複製的array   2.x,y,z為要合併的三個array 
+        const arrayConcat1 = x => x.concat() //複製
+        const arrayConcat2 = (x,y,z) => x.concat(y,z) //3陣列合併
 
 
+    //5.Array篩選搜尋
         // array.filter(function(item){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
         // function內的參數為陣列的元素
         ar2= ['T','E','S','T'];
-        ar2.filter(function(word){return word==="T"});//["T","T"]
+        ar2.filter(function(word){return word==="T"})//["T","T"]
         ar2.filter((word)=>word=="T");//簡單寫法
-        const arrayFilter = x => x.filter((item)=>item==5);//套array1 - [5,5]
+        const arrayFilter = x => x.filter((item)=>item==5)//套array1 - [5,5]
+
+        // array.indexOf() 在陣列中搜尋資料 並傳回他的位置
+        // x為要被搜尋的陣列 , y為該資料 所以是在x陣列裡面找是否有y這筆資料並回傳位置
+        const arrayIndexOf = (x,y) => x.indexOf(y)
 
 
 
@@ -108,12 +138,21 @@
         const str4 = '2019-12-3 12:43'
 
     //內容區
-        // eval(string) 可以對字串做運算(如果裡面有+-*/)  
+    //1.String新增移除
+
+
+    //2.String運算
+        // eval(string) 可以對字串做運算(如果字串裡面有+-*/)
+        // 就會直接把那些+-*/當成運算子算出結果喔
         // 就算沒有也可在括號內加進去 (字串內容必須是數字)
         const stringEval = x => eval('1+7-4*6/5')
 
 
-        // string.split() 字串轉array 可做切割,或拿掉特定字元
+    //3.String排序
+
+
+    //4.String合併切割
+        // string.split() 字串轉array 可做切割,或先切割並拿掉特定字元
         //()直接變陣列 套str1 - ['Apple macbook Microsoft Windows']
         const stringSplit1 = x => x.split()
         //('')每個字拆開變陣列 套str1 - ["A", "p", "p", "l", "e", " ", ... ]
@@ -124,8 +163,15 @@
         const stringSplit4 = x => x.split(':')
 
 
+    //5.String篩選
+        // string.match() 判斷該字串是否符合條件 , 是回傳true , 否回傳false
+        // 括號內為正規表達式
+        // 下列範例是驗證x是否為大寫
+        const stringMatch = x => x.match(/^.*[A-Z]+.*$/)
+
+
         // 直接吃這裡就可以看結果
-        div.innerHTML = arrayFilter(array1);
+        div.innerHTML = arrayReduce(array3)
     </script>
 </body>
 
