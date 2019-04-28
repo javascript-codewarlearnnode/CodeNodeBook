@@ -129,9 +129,10 @@
             var str = "Visit W3School";
             var patt1 = new RegExp("W3School");
 
-            var result = /W3School/.test(str);
+            var result = patt1.test(str);
+            var result2 = /W3School/.test(str);
 
-            document.write("Result: " + result);
+            document.write("Result: " + result + result2);
         }
         //完整版輸出區
         $('.area1').text(testFunction(s));
