@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Noto+Sans+TC" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -93,6 +94,64 @@
         right: 0;
         bottom: 120px;
     }
+    #Links {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 0 4px;
+            width: 20px;
+            height: 616px;
+            top: calc(50% - 308px);
+            right: 0;
+            transition: .5s;
+        }
+        #Links:hover {
+            background: rgba(0, 0, 0, 0.7);
+            width: 30px;
+        }
+        #Links.show {
+            background: rgba(0, 0, 0, 0.5);
+            width: 20px;
+            transform: translateX(-150px);
+            border-radius: 0;
+        }
+        #Links.show:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        #LinkList{
+            width: 150px;
+            height: 616px;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            position: fixed;
+            right: 0px;
+            top: calc(50% - 308px);
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateX(150px);
+            transition: .5s;
+        }
+        #LinkList.active{
+            transform: translateX(0px);
+            right: 0;
+        }
+        #LinkList p{
+            color: rgb(250, 195, 76);
+        }
+        #LinkList ul{
+            margin: 16px 0;
+        }
+        #LinkList ul li{
+            margin: 8px 0;
+        }
+        #LinkList ul li a{
+            color: #fff;
+        }
+        .fa-caret-left{
+            transition: .5s;
+        }
+        .fa-caret-left.active{
+            transform: rotate(180deg);
+        }
 </style>
 
 <body>
@@ -317,6 +376,25 @@
         </article>
         <div class="getHeigh"></div>
     </section>
+    <div id="LinkList">
+            <p>常用連結</p>
+            <hr>
+            <ul>
+                <li><a href="https://caniuse.com/" target="_blank">Can I use</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN</a></li>
+                <li><a href="https://developer.mozilla.org/zh-TW/docs/Web" target="_blank">MDN(繁中)</a></li>
+                <li><a href="https://stackoverflow.com/" target="_blank">stackoverflow</a></li>
+                <li><a href="https://www.w3.org/" target="_blank">W3C</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3School</a></li>
+                <li><a href="http://www.w3school.com.cn/index.html" target="_blank">W3School(簡中)</a></li>
+            </ul>
+            <hr>
+            <p>練功區</p>
+            <ul>
+                <li><a href="https://www.codewars.com/kata/latest/my-languages" target="_blank">codewars</a></li>
+            </ul>
+        </div>
+        <button type="button" id="Links" class="btn position-fixed"><i id="arrowicon" class="fas fa-caret-left"></i></button>
     <button type="button" id="goTop" class="btn btn-warning position-fixed">TOP</button>
     <div class="m-0 p-2 fixed-bottom" id="showboard">
         測試function輸出結果：
@@ -355,6 +433,18 @@
                 scrollTop: 0
             }, 400)
         });
+    //Link選單開合
+        $("#Links").click(function(){
+            if($(this).hasClass("show")){
+                $(this).removeClass("show");
+                $("#LinkList").removeClass("active");
+                $("#arrowicon").removeClass("active");
+            }else{
+                $(this).addClass("show");
+                $("#LinkList").addClass("active");
+                $("#arrowicon").addClass("active");
+            }
+        })
 
 // Array
 //-----------------------------------------------------------
