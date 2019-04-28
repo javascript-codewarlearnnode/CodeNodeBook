@@ -134,11 +134,30 @@
 
             document.write("Result: " + result + result2);
         }
+        var birds = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"];
+        function testFunction4(birds) {
+            var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+            var n = birds.length;
+            var output=[];
+            for(i=0;i<n;i++){
+                chk=0;
+                for(g=0;g<geese.length;g++){
+                    if(birds[i]!=geese[g])chk++;
+                }
+                if(chk==geese.length)output.push(birds[i]);
+            }
+            return output;
+        }
+            
+
+            // console.log(output)
+        
+
         //完整版輸出區
         $('.area1').text(testFunction(s));
         $('.area2').text(testFunction2(s));
         $('.area3').text(testFunction3());
-        $('.area4').text('');
+        $('.area4').text(testFunction4(birds));
 
 
 

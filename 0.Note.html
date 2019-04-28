@@ -258,16 +258,20 @@
                         <h5 class="card-title">新增/移除</h5>
                         <h6 class="card-subtitle mb-2 text-muted">空白</h6>
                         <p class="card-text">空白</p>
-                        <a href="#" target="_blank" class="card-link"></a>
+                        <a href="" target="_blank" class="card-link"></a>
                         <a href="#" target="_blank" class="card-link"></a>
                     </div>
                 </div>
                 <div class="card col-lg-3 m-4">
                     <div class="card-body" id="arMath">
                         <h5 class="card-title">運算</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">空白</h6>
-                        <p class="card-text">空白</p>
-                        <a href="#" target="_blank" class="card-link"></a>
+                        <h6 class="card-subtitle mb-2 text-muted">reduce()方法</h6>
+                        <p class="card-text">
+                            將一個累加器及陣列中每項元素（由左至右）傳入回呼函式，將陣列化為單一值<br>
+                            arr.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)<br>
+                            (MDN-參數解說)
+                        </p>
+                        <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" class="card-link">參考資料-MDN</a>
                         <a href="#" target="_blank" class="card-link"></a>
                     </div>
                 </div>
@@ -517,7 +521,12 @@
         // array.reduce() 想對陣列內容作兩個兩個做"運算"，在後面套運算func即可
         // 由左至右計算 回傳單一值
         // 例如下列例子套array3 會從左邊的值一路乘到最右邊的值 = -242161920
-        // x為要對內容之間做相互運算array
+        // x為要對內容之間做相互運算的array
+        // function參數(前一個回傳值，當前元素值，索引值，初始值)
+        // 若不設定初始值，前一個回傳值即會套用索引值為0的元素，而索引值參數則會從1開始
+        // 因此當前元素值即會抓取array中索引為1的元素
+        // 當對空陣列ar=[]做reduce運算時會出現undefined，故嚴謹的情況下必須要設定初始值為0
+        // 參考資料連結--Array-運算-reduce()
         const arrayReduce = x => x.reduce((a, b) => a * b)
 
         // array.map() 想對陣列全部的內容統一作"運算" 在後面套運算func即可
@@ -559,11 +568,22 @@
 
     //5.Array篩選搜尋
         // array.filter(function(item){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
-        // function內的參數為陣列的元素
+        // function內的參數為array的元素
         ar2 = ['T', 'E', 'S', 'T'];
         ar2.filter(function (word) { return word === "T" })//["T","T"]
         ar2.filter((word) => word == "T");//簡單寫法
         const arrayFilter = x => x.filter((item) => item == 5)//套array1 - [5,5]
+
+        // array.includes() 判斷陣列是否包含特定的元素(資料)，回傳 true 或 false
+        // x為要被搜尋的陣列，y為判斷陣列是否有包含的元素。即判斷x陣列中是否包含y元素
+        const arrayIncludes = (x, y) => x.includes(y);
+
+        // 延伸>>>綜合filter() & includes()方法，可判斷A陣列中的元素是否包含B陣列中的元素
+        // 此例要把ar1與ar2重複的元素拿掉，只留下ar2沒有的元素
+        ar1 = ["Apple","Orange","Banana","Kiwi"];
+        ar2 = ["Apple","Kiwi"];
+        result = ar1.filter((item)=> !ar2.includes(item));//result會是一個新的array=["Orange","Banana"]
+        const arrayFilterIncludes = (ar1, ar2) => ar1.filter((item)=> !ar2.includes(item));
 
         // array.indexOf() 在陣列中搜尋資料 並傳回他的位置
         // x為要被搜尋的陣列 , y為該資料 所以是在x陣列裡面找是否有y這筆資料並回傳位置
@@ -611,9 +631,26 @@
         // 下列範例是驗證x是否為大寫
         const stringMatch = x => x.match(/^.*[A-Z]+.*$/)
 
+        // RegExpObject.test(string) 判斷字串內容是否有符合RegExpObject的格式
+        // 方法一:先建立RegExp物件，設定判斷條件，使用物件比對字串內容
+        // 方法二:直接寫正規表達是的判斷式來判斷
+        // 範例一:要比對是否含有大寫A-Z字母
+        var str = "CodEWaRs";
+        var patt1 = new RegExp("[A-Z]");//方法一-建立RegExp物件
+        var result = patt1.test(str);//使用RegExp物件比對，若str符合條件，則回傳true，不符合回傳false
+        var result2 = /[A-Z]/.test(str);//方法二-直接使用正規表達式進行比對
+        // 範例二:判斷字串內容是否包含"W3School"。判斷結果為true
+        var str = "Visit W3School";
+        var patt1 = new RegExp("W3School");
+        var result = patt1.test(str);
+        var result2 = /W3School/.test(str);
+        // x為要判斷的字串，y為正規表達式的比對條件
+        const stringTest = (x, y) => y.test(x);
+
+
 
 // 直接吃這裡就可以看結果
-        show_result.innerHTML = arrayReduce(array3)
+        show_result.innerHTML = arrayFilterIncludes(ar1,ar2)
     </script>
 </body>
 

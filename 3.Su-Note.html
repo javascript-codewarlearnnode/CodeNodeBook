@@ -13,47 +13,70 @@
     <script>
         var div = document.querySelector('#div');
 
-// Array
-//-----------------------------------------------------------
-    //假資料區
-    const array1 = [5,6,7,1,5,11,35,348,321,12,0]
-    const array2 = ['Peter','Ethan','Jason','Tom','Amanda']
+        // Array
+        //-----------------------------------------------------------
+        //假資料區
+        const array1 = [5, 6, 7, 1, 5, 11, 35, 348, 321, 12, 0]
+        const array2 = ['Peter', 'Ethan', 'Jason', 'Tom', 'Amanda']
 
 
-    // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳單一值)
+        // array.reduce() 是可以對陣列內容作"運算"，在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳單一值)
         const arrayReduce = x => x.reduce((a, b) => a * b);
 
-    // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳新的陣列)
-        const arrayMap = x => x.map(a=> a * 2);
+        // array.map() 是可以對陣列內容作"運算" 在後面套運算func即可 (將陣列中的每個元素套入func運算後，回傳新的陣列)
+        const arrayMap = x => x.map(a => a * 2);
 
 
-    // array.join() 將陣列內容以()內的字串串接，輸出成為字串
-        ar=["Join","Words","Together"];
+        // array.join() 將陣列內容以()內的字串串接，輸出成為字串
+        ar = ["Join", "Words", "Together"];
         ar.join("");//'Peter','Ethan','Jason','Tom','Amanda'
         ar.join("-")//'Peter','Ethan','Jason','Tom','Amanda'
 
-    // array.filter(function(){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
-        ar2= ['T','E','S','T'];
-        ar2.filter(function(word){return word==="T"});//["T","T"]
-        ar2.filter((word)=>word=="T");//簡單寫法
+        // array.filter(function(){}) 將陣列內容過濾，返回一個符合function內條件的新陣列
+        // function的參數代表陣列中的元素
+        ar2 = ['T', 'E', 'S', 'T'];
+        ar2.filter(function (word) { return word === "T" });//["T","T"]
+        ar2.filter((word) => word == "T");//簡單寫法
+
+
+        //reduce(function(){},初始值)
+        //include
+
+
+
+
+        // String
+        //-----------------------------------------------------------
+
+        //RegExpObject.test(string) 判斷字串內容是否有符合RegExpObject的格式
+        var str = "CodEWaRs";
+        //方法一:先建立RegExp物件，設定判斷條件，使用物件比對字串內容
+        var patt1 = new RegExp("[A-Z]");//此範例要比對是否含有大寫A-Z字母
+        var result = patt1.test(str);//若str符合條件，則回傳true
+        //方法二:直接寫正規表達是的判斷式來判斷
+        var result2 = /[A-Z]/.test(str);
+        //範例二:判斷字串內容是否包含"W3School"。判斷結果為true
+        var str = "Visit W3School";
+        var patt1 = new RegExp("W3School");
+        var result = patt1.test(str);
+        var result2 = /W3School/.test(str);
+
+
+
+
+        // Arrow Function
+        //-----------------------------------------------------------
 
 
 
 
 
-// Arrow Function
-//-----------------------------------------------------------
 
 
 
 
 
-
-
-
-
-
-    //內容區
+        //內容區
         //array.reduce() 是可以對陣列內容作"運算" 在後面套運算func即可
         //const arrayReduce = x => x.reduce((a, b) => a + b);
 
