@@ -101,34 +101,42 @@
     <script>
         //完整版編寫區       
         var z1 = 6;
-        var s="CodEWaRs";
+        var s = "CodEWaRs";
         function testFunction(x) {
-            s1=s;
-            n=s.length;
-            index=[];
-            for(i=0;i<n;i++){
-                if(s1.match(/^[A-Z]/)){
-                index.push(s1.search(/[A-Z]/)+i);
+            s1 = s;
+            n = s.length;
+            index = [];
+            for (i = 0; i < n; i++) {
+                if (s1.match(/^[A-Z]/)) {
+                    index.push(s1.search(/[A-Z]/) + i);
                 }
                 s1 = s1.substring(1);
             }
             return index;
         }
-        
+
         function testFunction2(x) {
-            ar=s.split("");
-            index=[];
-            for(i=0;i<ar.length;i++){
-                if(/[A-Z]/.test(ar[i])){
-                index.push(i);
+            ar = s.split("");
+            index = [];
+            for (i = 0; i < ar.length; i++) {
+                if (/[A-Z]/.test(ar[i])) {
+                    index.push(i);
                 }
             }
             return index;
         }
+        function testFunction3() {
+            var str = "Visit W3School";
+            var patt1 = new RegExp("W3School");
+
+            var result = /W3School/.test(str);
+
+            document.write("Result: " + result);
+        }
         //完整版輸出區
         $('.area1').text(testFunction(s));
         $('.area2').text(testFunction2(s));
-        $('.area3').text('');
+        $('.area3').text(testFunction3());
         $('.area4').text('');
 
 
